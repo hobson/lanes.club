@@ -10,6 +10,9 @@
             .info {
                 padding: 5px;
             }
+            .tably {
+                padding: 5px;
+            }
         </style>
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
@@ -128,29 +131,31 @@
                 <div class="searchBar">
                     search: <input type="text" data-ng-model="searchFilter"/>
                 </div>
-                <table class="pure-table pure-table-striped">
-                    <thead>
-                        <tr>
-                            <th ng-click="predicate='Brewery'; reverse=!reverse">Brewery</th>
-                            <th ng-click="predicate='Beer'; reverse=!reverse">Beer</th>
-                            <th ng-click="predicate='Style'; reverse=!reverse">Style</th>
-                            <th ng-click="predicate='ABV'; reverse=!reverse">ABV</th>
-                            <th ng-click="predicate='IBU'; reverse=!reverse">IBU</th>
-                            <th ng-click="predicate='tap_trailer'; reverse=!reverse">Trailer</th>
-                        </tr>
-                    </thead>
+                <div class="tably">
+                    <table class="pure-table pure-table-striped">
+                        <thead>
+                            <tr>
+                                <th ng-click="predicate='Brewery'; reverse=!reverse">Brewery</th>
+                                <th ng-click="predicate='Beer'; reverse=!reverse">Beer</th>
+                                <th ng-click="predicate='Style'; reverse=!reverse">Style</th>
+                                <th ng-click="predicate='ABV'; reverse=!reverse">ABV</th>
+                                <th ng-click="predicate='IBU'; reverse=!reverse">IBU</th>
+                                <th ng-click="predicate='tap_trailer'; reverse=!reverse">Trailer</th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        <tr ng-repeat="beer in beers | filter:searchFilter | orderBy: predicate : reverse" >
-                            <td>{{beer.Brewery}}</td>
-                            <td ng-click="sortColumn=Beer;reverse=!reverse">{{beer.Beer}}</td>
-                            <td>{{beer.Style}}</td>
-                            <td>{{beer.ABV}}</td>
-                            <td>{{beer.IBU}}</td>
-                            <td>{{beer.tap_trailer}}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                        <tbody>
+                            <tr ng-repeat="beer in beers | filter:searchFilter | orderBy: predicate : reverse" >
+                                <td>{{beer.Brewery}}</td>
+                                <td ng-click="sortColumn=Beer;reverse=!reverse">{{beer.Beer}}</td>
+                                <td>{{beer.Style}}</td>
+                                <td>{{beer.ABV}}</td>
+                                <td>{{beer.IBU}}</td>
+                                <td>{{beer.tap_trailer}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div> <!-- ng-controller -->
         </div> <!-- content -->
     </body>
