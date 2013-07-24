@@ -2,6 +2,7 @@
 <html ng-app>
     <head>
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <style>
             .searchBar {
                 padding: 5px;
@@ -10,6 +11,7 @@
                 padding: 5px;
             }
         </style>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
         <script>
             var theApp = angular.module('theApp', []);
@@ -102,7 +104,18 @@
                 {"Brewery": "Wildwood Brewing","Style": "Pale Lager","Beer": "Organic Ambitious Lager","tap_trailer": 7,"IBU": 22,"ABV": 5,"Notes": "German Hallertau Hersbrucker hops are added three times, just to make sure you can taste them, but the soft brewing water keeps them from tasting harsh on your palate. Two-row pale and Munich malts provide an authentic Munich-style grain bill, and the brewers keep the German theme going with a Munich lager yeast - and, of course, plenty of cold lagering for extra smoothness."},
                 {"Brewery": "Yakima Craft Brewing Co","Style": "Scottish Heather Ale","Beer": "Heather","tap_trailer": 2,"IBU": 22,"ABV": 5.7,"Notes": "Heather tips and honey make this one stand out. The honey supplements the fermentables provided by two-row pale, crystal, Vienna and Munich malts. The earthy noble Golding hops do the bittering, assisted by the heather tips. A traditional top-fermenting English yeast produces a full-bodied ale with fruity esters."}];
                 // console.log($scope.beers);
-            } 
+            }
+            theApp.directive('tooltip', function () {
+                return {
+                    restrict:'A',
+                    link: function(scope, element, attrs)
+                    {
+                        $(element)
+                            .attr('title',scope.$eval(attrs.Notes))
+                            .tooltip({placement: "right"});
+                    }
+                }
+            }) 
         </script>
     </head>
     <body>
@@ -128,7 +141,7 @@
                     </thead>
 
                     <tbody>
-                        <tr ng-repeat="beer in beers | filter:searchFilter | orderBy: predicate : reverse">
+                        <tr ng-repeat="beer in beers | filter:searchFilter | orderBy: predicate : reverse" >
                             <td>{{beer.Brewery}}</td>
                             <td ng-click="sortColumn=Beer;reverse=!reverse">{{beer.Beer}}</td>
                             <td>{{beer.Style}}</td>
