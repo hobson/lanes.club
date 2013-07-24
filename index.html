@@ -14,17 +14,15 @@
                 padding: 5px;
             }
         </style>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
+        <script src="js/ui-bootstrap-0.4.0.min.js"></script>
         <script>
-            var theApp = angular.module('theApp', []);
+            var theApp = angular.module('theApp', ['ui.bootstrap']);
 
 
 
             function theCtrl($scope) {
-                $scope.beers = [{"Brewery": "10 Barrel Brewing Co","Style": "German Radler","Beer": "SWILL","tap_trailer": 4,"IBU": 14,"ABV": 4.5, tooltip: "Beer guy! Stop taking yourself so serious... 10 Barrel's Swill was designed to throw down. Starting with a base of fine German malts and Sterling hops, the brewers infused Berliner Weiss (also German) with multiple layers of grapefruit (not so German). Fun, delicious and easy to drink!"},
+                $scope.beers = [{"Brewery": "10 Barrel Brewing Co","Style": "German Radler","Beer": "SWILL","tap_trailer": 4,"IBU": 14,"ABV": 4.5, "Notes": "Beer guy! Stop taking yourself so serious... 10 Barrel's Swill was designed to throw down. Starting with a base of fine German malts and Sterling hops, the brewers infused Berliner Weiss (also German) with multiple layers of grapefruit (not so German). Fun, delicious and easy to drink!"},
                 {"Brewery": "13 Virtues Brewing Co","Style": "Belgian Wit with Fruit","Beer": "Traverse Cherry Wheat","tap_trailer": 1,"IBU": 20,"ABV": 6,"Notes": "Oregon cherries give this Belgian Witbier its red color, as well as a sweet-tart fruitiness accentuated by the Wyeast Belgian wit yeast used to ferment the wort for this beer. Great Western wheat and pilsner malts in the mash are balanced with a low dose of bittering hops and no finishing hops so you can enjoy the cherry flavor and aroma."},
                 {"Brewery": "21st Amendment Brewery","Style": "Fruit Wheat Beer","Beer": "Hell or High Watermelon","tap_trailer": 8,"IBU": 17,"ABV": 4.9,"Notes": "One of the most popular beers at the OBF for several years, this American wheat beer is brewed with real watermelon for a refreshing hint of watermelon flavor and aroma. Like Summer in a glass!"},
                 {"Brewery": "Alameda Brewing Co","Style": "Golden Ale","Beer": "Huckleberry Hound","tap_trailer": 1,"IBU": 20,"ABV": 4,"Notes": "If you've ever wondered how Oregon huckleberries might taste in a beer, here's your chance! This sweet fruit complements the grain bill of two-row, acidulated, white wheat, pilsner and Munich malts, fermented with a Scottish ale yeast to create a malt-forward beer with a pleasant fruity ester profile."},
@@ -109,19 +107,11 @@
                 {"Brewery": "Wildwood Brewing","Style": "Pale Lager","Beer": "Organic Ambitious Lager","tap_trailer": 7,"IBU": 22,"ABV": 5,"Notes": "German Hallertau Hersbrucker hops are added three times, just to make sure you can taste them, but the soft brewing water keeps them from tasting harsh on your palate. Two-row pale and Munich malts provide an authentic Munich-style grain bill, and the brewers keep the German theme going with a Munich lager yeast - and, of course, plenty of cold lagering for extra smoothness."},
                 {"Brewery": "Yakima Craft Brewing Co","Style": "Scottish Heather Ale","Beer": "Heather","tap_trailer": 2,"IBU": 22,"ABV": 5.7,"Notes": "Heather tips and honey make this one stand out. The honey supplements the fermentables provided by two-row pale, crystal, Vienna and Munich malts. The earthy noble Golding hops do the bittering, assisted by the heather tips. A traditional top-fermenting English yeast produces a full-bodied ale with fruity esters."}];
                 // console.log($scope.beers);
+                $scope.dynamicTooltip = "Hello, World!";
+                $scope.dynamicTooltipText = "dynamic";
+                $scope.htmlTooltip = "I've been made <b>bold</b>!";
             }
             
-            theApp.directive('tooltip', function () {
-                return {
-                    restrict:'A',
-                    link: function(scope, element, attrs)
-                    {
-                        $(element)
-                            .attr('title',scope.$eval(attrs.tooltip))
-                            .tooltip({placement: "right"});
-                    }
-                }
-            }) 
         </script>
     </head>
     <body>
@@ -149,7 +139,7 @@
 
                         <tbody>
                             <tr ng-repeat="beer in beers | filter:searchFilter | orderBy: predicate : reverse">
-                                <td><a rel="tooltip" tooltip="beer.tooltip">{{beer.Brewery}}</a></td>
+                                <td><span tooltip-placement="mouse" tooltip="Beer info">{{beer.Brewery}}<span></td>
                                 <td ng-click="sortColumn=Beer;reverse=!reverse">{{beer.Beer}}</td>
                                 <td>{{beer.Style}}</td>
                                 <td>{{beer.ABV}}</td>
