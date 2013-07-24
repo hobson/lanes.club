@@ -1,8 +1,8 @@
 <!doctype html>
-<html ng-app>
+<html>
     <head>
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
         <style>
             .searchBar {
                 padding: 5px;
@@ -15,9 +15,9 @@
             }
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
-        <script src="js/ui-bootstrap-0.4.0.min.js"></script>
+        <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.4.0.js"></script>
         <script>
-            var theApp = angular.module('theApp', ['ui.bootstrap']);
+            angular.module('theApp', ['ui.bootstrap']);
 
 
 
@@ -107,20 +107,20 @@
                 {"Brewery": "Wildwood Brewing","Style": "Pale Lager","Beer": "Organic Ambitious Lager","tap_trailer": 7,"IBU": 22,"ABV": 5,"Notes": "German Hallertau Hersbrucker hops are added three times, just to make sure you can taste them, but the soft brewing water keeps them from tasting harsh on your palate. Two-row pale and Munich malts provide an authentic Munich-style grain bill, and the brewers keep the German theme going with a Munich lager yeast - and, of course, plenty of cold lagering for extra smoothness."},
                 {"Brewery": "Yakima Craft Brewing Co","Style": "Scottish Heather Ale","Beer": "Heather","tap_trailer": 2,"IBU": 22,"ABV": 5.7,"Notes": "Heather tips and honey make this one stand out. The honey supplements the fermentables provided by two-row pale, crystal, Vienna and Munich malts. The earthy noble Golding hops do the bittering, assisted by the heather tips. A traditional top-fermenting English yeast produces a full-bodied ale with fruity esters."}];
                 // console.log($scope.beers);
-                $scope.dynamicTooltip = "Hello, World!";
-                $scope.dynamicTooltipText = "dynamic";
-                $scope.htmlTooltip = "I've been made <b>bold</b>!";
             }
             
         </script>
     </head>
     <body>
-        <div class="content yui3-normalized">
+        <div class="content yui3-normalized" ng-app="theApp">
             <h2>Oregon Brewers Fest</h2>
             <div class="info">
                 <span>brought to you by @aleck_landgraf: click the table headers to sort, type in the search bar to filter</span>
             </div>
             <div data-ng-controller="theCtrl">
+                <div>
+                    <a><span tooltip-placement="right" tooltip="On the Left!">left</span></a>
+                </div>
                 <div class="searchBar">
                     search: <input type="text" data-ng-model="searchFilter"/>
                 </div>
