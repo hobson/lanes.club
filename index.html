@@ -6,6 +6,9 @@
             .searchBar {
                 padding: 5px;
             }
+            .info {
+                padding: 5px;
+            }
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
         <script>
@@ -98,31 +101,34 @@
                 {"Brewery": "Wild River Brewing","Style": "Kolsch","Beer": "Harbor Lights","tap_trailer": 2,"IBU": 21,"ABV": 5.1,"Notes": "This beer's malt base comes from two-row pale, Munich and white wheat. Fermented with the house strain yeast from Paffgen brewery in KÃ¶ln, a kind gift from the head brewer many years ago, it's clean-fermenting and highly attenuative, with mild pear esters and white wine overtones."},
                 {"Brewery": "Wildwood Brewing","Style": "Pale Lager","Beer": "Organic Ambitious Lager","tap_trailer": 7,"IBU": 22,"ABV": 5,"Notes": "German Hallertau Hersbrucker hops are added three times, just to make sure you can taste them, but the soft brewing water keeps them from tasting harsh on your palate. Two-row pale and Munich malts provide an authentic Munich-style grain bill, and the brewers keep the German theme going with a Munich lager yeast - and, of course, plenty of cold lagering for extra smoothness."},
                 {"Brewery": "Yakima Craft Brewing Co","Style": "Scottish Heather Ale","Beer": "Heather","tap_trailer": 2,"IBU": 22,"ABV": 5.7,"Notes": "Heather tips and honey make this one stand out. The honey supplements the fermentables provided by two-row pale, crystal, Vienna and Munich malts. The earthy noble Golding hops do the bittering, assisted by the heather tips. A traditional top-fermenting English yeast produces a full-bodied ale with fruity esters."}];
-                console.log($scope.beers);
+                // console.log($scope.beers);
             } 
         </script>
     </head>
     <body>
         <div class="content yui3-normalized">
-            <h2>hello beer drinkers</h2>
-            <div ng-controller="theCtrl">
+            <h2>Oregon Brewers Fest</h2>
+            <div class="info">
+                <span>brought to you by Aleck: click the table headers to sort, type in the search bar to filter</span>
+            </div>
+            <div data-ng-controller="theCtrl">
                 <div class="searchBar">
-                    search: <input type="text" ng-model="searchFilter"/>
+                    search: <input type="text" data-ng-model="searchFilter"/>
                 </div>
                 <table class="pure-table pure-table-striped">
                     <thead>
                         <tr>
-                            <th>Brewery</th>
-                            <th>Beer</th>
-                            <th>Style</th>
-                            <th>ABV</th>
-                            <th>IBU</th>
-                            <th>Trailer</th>
+                            <th ng-click="predicate='Brewery'; reverse=!reverse">Brewery</th>
+                            <th ng-click="predicate='Beer'; reverse=!reverse">Beer</th>
+                            <th ng-click="predicate='Style'; reverse=!reverse">Style</th>
+                            <th ng-click="predicate='ABV'; reverse=!reverse">ABV</th>
+                            <th ng-click="predicate='IBU'; reverse=!reverse">IBU</th>
+                            <th ng-click="predicate='tap_trailer'; reverse=!reverse">Trailer</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <tr ng-repeat="beer in beers | filter:searchFilter | orderBy:'Brewery'">
+                        <tr ng-repeat="beer in beers | filter:searchFilter | orderBy: predicate : reverse">
                             <td>{{beer.Brewery}}</td>
                             <td ng-click="sortColumn=Beer;reverse=!reverse">{{beer.Beer}}</td>
                             <td>{{beer.Style}}</td>
