@@ -118,9 +118,6 @@
                 <span>brought to you by @aleck_landgraf: click the table headers to sort, type in the search bar to filter</span>
             </div>
             <div data-ng-controller="theCtrl">
-                <div>
-                    <a><span tooltip-placement="right" tooltip="On the Left!">left</span></a>
-                </div>
                 <div class="searchBar">
                     search: <input type="text" data-ng-model="searchFilter"/>
                 </div>
@@ -139,8 +136,8 @@
 
                         <tbody>
                             <tr ng-repeat="beer in beers | filter:searchFilter | orderBy: predicate : reverse">
-                                <td><span tooltip-placement="mouse" tooltip="Beer info">{{beer.Brewery}}<span></td>
-                                <td ng-click="sortColumn=Beer;reverse=!reverse">{{beer.Beer}}</td>
+                                <td><span tooltip-placement="mouse" tooltip="{{beer.Notes}}">{{beer.Brewery}}<span></td>
+                                <td><span tooltip="{{beer.Notes}}">{{beer.Beer}}<span></td>
                                 <td>{{beer.Style}}</td>
                                 <td>{{beer.ABV}}</td>
                                 <td>{{beer.IBU}}</td>
