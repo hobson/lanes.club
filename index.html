@@ -37,10 +37,13 @@
                 $scope.asking_price = 375000;
                 $scope.loan_to_ratio = 80;
                 $scope.taxes = 3500;
-                $scope.down_payment = function (){
-                    return 0.20 * $scope.asking_price;
+                $scope.interest_rate = 4.125;
+                $scope.compute_mortgage = function (){
+                    $scope.down_payment = (1 - $scope.loan_to_ratio / 100) * $scope.asking_price;
+                    $scope.loan_payment = $scope.loan_to_ratio / 100 * $scope.asking_price;
                 };
                 function init(){   
+                    $scope.compute_mortgage();
                 }
                 init();
             });
@@ -107,15 +110,15 @@
                             </tr>
                             <tr >
                                 <td>Down Payment</td>
-                                <td>${{ down_payment() | number }}</td>
+                                <td>${{ down_payment | number:0 }}</td>
                             </tr>
                             <tr >
-                                <td>Loan to Value Ratio</td>
-                                <td>{{ loan_to_ratio }}%</td>
+                                <td>Loan Amount</td>
+                                <td>${{ loan_payment | number:0 }}</td>
                             </tr>
                             <tr >
-                                <td>Loan to Value Ratio</td>
-                                <td>{{ loan_to_ratio }}%</td>
+                                <td>Interest Rate</td>
+                                <td>{{ interest_rate | number:3 }}%</td>
                             </tr>
                         </tbody>
                     </table>
