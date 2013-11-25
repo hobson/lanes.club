@@ -12,7 +12,10 @@
         }
         .starter-template {
           padding: 40px 15px;
-          text-align: center;
+          /*text-align: center;*/
+        }
+        .search_params {
+             padding: 10px 15px;
         }
     </style>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
@@ -64,8 +67,30 @@
                     <h2>Closing Cost</h2>
                     <div class="info">
                     </div>
+                    <div class="search_params">
+                        <input class="" type="Search" placeholder="asking price" ng-model="asking_price" ng-change="compute_mortgage()">
+                        <input class="" type="Search" placeholder="taxes" ng-model="taxes" ng-change="compute_mortgage()">
+                    </div>
                     <div>
-                        <a href="https://docs.google.com/a/buildingenergy.com/spreadsheet/ccc?key=0AqJODdtaNNwedHJPWmFEaG9hdTRWTUNVb1M4Q3FOWmc&usp=drive_web#gid=0">google doc</a>
+                        <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr >
+                                <td>asking price</td>
+                                <td>${{asking_price | number:0}}</td>
+                            </tr>
+                            <tr >
+                                <td>taxes</td>
+                                <td>${{taxes | number:0}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     </div> <!-- ng-controller -->
                 </div> <!-- content -->
             </div>
