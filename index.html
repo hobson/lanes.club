@@ -13,7 +13,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular.min.js"></script>
         <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.7.0.js"></script>
         <script>
-            var app = angular.module('closing_cost ', ['ui.bootstrap']);
+            var app = angular.module('closing_cost ', []);
 
             app.controller('closing_cost_controller' theCtrl($scope, $window) {
                 var init = function () {
@@ -31,22 +31,6 @@
             <div class="info">
             </div>
             <div data-ng-controller="closing_cost_controller">
-                <div class="searchBar">
-                    search: <input type="text" data-ng-model="searchFilter"/>
-                </div>
-                <div class="">
-                    <table class="">
-                        <thead>
-                            <tr>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
             </div> <!-- ng-controller -->
         </div> <!-- content -->
     </body>
