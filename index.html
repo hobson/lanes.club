@@ -38,9 +38,27 @@
                 $scope.loan_to_ratio = 80;
                 $scope.taxes = 3500;
                 $scope.interest_rate = 4.125;
+                $scope.homeowner_insurance = 600;
+                $scope.term_of_loan_years = 30;
+                $scope.loan_payment = 0;
+                var monthly_payment = function () {
+                    // M = P * ( J / (1 - (1 + J)^ -N))
+                    // M: monthly payment
+                    // P: principal or amount of loan
+                    // J: monthly interest; annual interest divided by 100, then divided by 12
+                    // N: number of months of amortization, determined by length in years of loan.
+                    var M, P, J, N;
+                    P = $scope.loan_payment;
+                    J = $scope.interest_rate / 100.0 / 12.0;
+                    N = $scope.term_of_loan_years * 12;
+                    M = P * ( J / (1 - Math.pow(1/(1 + J), N)));
+                    return M;
+                };
                 $scope.compute_mortgage = function (){
                     $scope.down_payment = (1 - $scope.loan_to_ratio / 100) * $scope.asking_price;
                     $scope.loan_payment = $scope.loan_to_ratio / 100 * $scope.asking_price;
+                    $scope.principal_payment = monthly_payment();
+
                 };
                 function init(){   
                     $scope.compute_mortgage();
@@ -119,6 +137,14 @@
                             <tr >
                                 <td>Interest Rate</td>
                                 <td>{{ interest_rate | number:3 }}%</td>
+                            </tr>
+                            <tr >
+                                <td>Yearly Homeowners Insurance</td>
+                                <td>${{ homeowner_insurance | number:0 }}</td>
+                            </tr>
+                            <tr >
+                                <td>Principal Interest Payment</td>
+                                <td>${{ principal_payment | number:0 }}</td>
                             </tr>
                         </tbody>
                     </table>
