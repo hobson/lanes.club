@@ -15,15 +15,15 @@
           /*text-align: center;*/
         }
         .search_params {
-             padding: 10px 15px;
+             padding: 10px;
+        }
+        .input_fields {
+            padding: 0px 0px 10px;
         }
     </style>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
@@ -70,6 +70,11 @@
                     }
                     $scope.compute_mortgage();
                 };
+                $scope.get_loan_class = function(term) {
+                    if (term === $scope.term_of_loan_years) {
+                        return "active"
+                    }
+                };
                 function init(){   
                     $scope.compute_mortgage();
                 }
@@ -107,15 +112,15 @@
                     <div class="info">
                     </div>
                     <div class="search_params">
-                        <div>
+                        <div class="input_fields">
                             <p>asking price</p> <input class="" type="tel" placeholder="asking price" ng-model="asking_price" ng-change="compute_mortgage()">
                         </div>
-                        <div>
+                        <div class="input_fields">
                             <p>taxes</p> <input class="" type="tel" placeholder="taxes" ng-model="taxes" ng-change="compute_mortgage()">
                         </div>
                         <div class="btn-group">
-                            <button type="button" class="btn btn-default" ng-click="set_loan_term(30)">30 year</button>
-                            <button type="button" class="btn btn-default" ng-click="set_loan_term(15)">15 year</button>
+                            <button type="button" class="btn btn-default {{get_loan_class(30)}}" ng-click="set_loan_term(30)">30 year</button>
+                            <button type="button" class="btn btn-default {{get_loan_class(15)}}" ng-click="set_loan_term(15)">15 year</button>
                         </div>
                     </div>
                     <div>
