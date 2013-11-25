@@ -32,18 +32,15 @@
 
         <script>
             var app = angular.module('theApp', []);
-
-            function closing_cost_controller($scope, $window, $location) {
+            app.controller('closing_cost_controller', function($scope, $window, $location) {
                 $scope.site = "https://docs.google.com/a/buildingenergy.com/spreadsheet/ccc?key=0AqJODdtaNNwedHJPWmFEaG9hdTRWTUNVb1M4Q3FOWmc&usp=drive_web#gid=0";
-                $scope.property = {};
                 function init(){   
                     $scope.loan_to_ratio = 80;
                     $scope.asking_price = 375000;
                     $scope.taxes = 3500;
-                    $scope.property.taxes = 3500;
                 }
                 init();
-            }
+            });
                
             
         </script>
@@ -99,7 +96,7 @@
                             </tr>
                             <tr >
                                 <td>taxes</td>
-                                <td>${{property.taxes | number:0}}</td>
+                                <td>${{taxes | number:0}}</td>
                             </tr>
                             <tr >
                                 <td>Loan to Value Ratio</td>
