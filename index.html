@@ -61,6 +61,15 @@
                     $scope.total_payment = $scope.principal_payment + $scope.taxes / 12 + $scope.homeowner_insurance / 12;
 
                 };
+                $scope.set_loan_term = function(term) {
+                    $scope.term_of_loan_years = term;
+                    if (term === 15) {
+                        $scope.interest_rate = 3.250;
+                    } else {
+                        $scope.interest_rate = 4.125;
+                    }
+                    $scope.compute_mortgage();
+                };
                 function init(){   
                     $scope.compute_mortgage();
                 }
@@ -103,6 +112,10 @@
                         </div>
                         <div>
                             <p>taxes</p> <input class="" type="tel" placeholder="taxes" ng-model="taxes" ng-change="compute_mortgage()">
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default" ng-click="set_loan_term(30)">30 year</button>
+                            <button type="button" class="btn btn-default" ng-click="set_loan_term(15)">15 year</button>
                         </div>
                     </div>
                     <div>
