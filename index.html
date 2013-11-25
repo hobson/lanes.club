@@ -34,10 +34,13 @@
             var app = angular.module('theApp', []);
             app.controller('closing_cost_controller', function($scope, $window, $location) {
                 $scope.site = "https://docs.google.com/a/buildingenergy.com/spreadsheet/ccc?key=0AqJODdtaNNwedHJPWmFEaG9hdTRWTUNVb1M4Q3FOWmc&usp=drive_web#gid=0";
+                $scope.asking_price = 375000;
+                $scope.loan_to_ratio = 80;
+                $scope.taxes = 3500;
+                $scope.down_payment = function (){
+                    return 0.20 * $scope.asking_price;
+                };
                 function init(){   
-                    $scope.loan_to_ratio = 80;
-                    $scope.asking_price = 375000;
-                    $scope.taxes = 3500;
                 }
                 init();
             });
@@ -100,7 +103,19 @@
                             </tr>
                             <tr >
                                 <td>Loan to Value Ratio</td>
-                                <td>{{ loan_to_ratio}}</td>
+                                <td>{{ loan_to_ratio }}%</td>
+                            </tr>
+                            <tr >
+                                <td>Down Payment</td>
+                                <td>${{ down_payment() | number }}</td>
+                            </tr>
+                            <tr >
+                                <td>Loan to Value Ratio</td>
+                                <td>{{ loan_to_ratio }}%</td>
+                            </tr>
+                            <tr >
+                                <td>Loan to Value Ratio</td>
+                                <td>{{ loan_to_ratio }}%</td>
                             </tr>
                         </tbody>
                     </table>
