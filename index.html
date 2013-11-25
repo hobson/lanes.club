@@ -50,6 +50,7 @@
                 $scope.homeowner_insurance = 600;
                 $scope.term_of_loan_years = 30;
                 $scope.loan_payment = 0;
+                $scope.edit_rate = false;
                 var monthly_payment = function () {
                     // M = P * ( J / (1 - (1 + J)^ -N))
                     // M: monthly payment
@@ -177,7 +178,10 @@
                             </tr>
                             <tr >
                                 <td>Interest Rate</td>
-                                <td>{{ interest_rate | number:3 }}%</td>
+                                <td ng-show="!edit_rate">{{ interest_rate | number:3 }}% <a ng-click="edit_rate = true"><i class="fa fa-cog"></i></a></td>
+                                <td ng-show="edit_rate"><input type="tel" ng-model="interest_rate" style="width: 100px" class="ng-valid ng-dirty" ng-change="compute_mortgage()">
+                                    <button type="button" class="btn btn-default" ng-click="edit_rate = false">Close</button>
+                                </td>
                             </tr>
                             <tr >
                                 <td>Yearly Homeowners Insurance</td>
