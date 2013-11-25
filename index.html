@@ -12,15 +12,12 @@
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.js"></script>
        
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
-        <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.7.0.js"></script>
+
         <script>
             var app = angular.module('closing_cost ', []);
 
             app.controller('closing_cost_controller' function($scope, $window, $location) {
-                var init = function () {
-                    $window.location.href = "https://docs.google.com/a/buildingenergy.com/spreadsheet/ccc?key=0AqJODdtaNNwedHJPWmFEaG9hdTRWTUNVb1M4Q3FOWmc&usp=drive_web#gid=0";
-                };
-                init();
+                $scope.site = "https://docs.google.com/a/buildingenergy.com/spreadsheet/ccc?key=0AqJODdtaNNwedHJPWmFEaG9hdTRWTUNVb1M4Q3FOWmc&usp=drive_web#gid=0";
             });
                
             
@@ -32,6 +29,7 @@
             <div class="info">
             </div>
             <div data-ng-controller="closing_cost_controller">
+                <a href="https://docs.google.com/a/buildingenergy.com/spreadsheet/ccc?key=0AqJODdtaNNwedHJPWmFEaG9hdTRWTUNVb1M4Q3FOWmc&usp=drive_web#gid=0">{{ site }}</a>
             </div> <!-- ng-controller -->
         </div> <!-- content -->
     </body>
