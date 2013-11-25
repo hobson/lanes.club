@@ -14,11 +14,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
 
         <script>
-            var app = angular.module('closing_cost', []);
 
-            app.controller('closing_cost_controller' function($scope, $window, $location) {
+            function closing_cost_controller($scope, $window, $location) {
                 $scope.site = "https://docs.google.com/a/buildingenergy.com/spreadsheet/ccc?key=0AqJODdtaNNwedHJPWmFEaG9hdTRWTUNVb1M4Q3FOWmc&usp=drive_web#gid=0";
-            });
+                window.location = "https://docs.google.com/a/buildingenergy.com/spreadsheet/ccc?key=0AqJODdtaNNwedHJPWmFEaG9hdTRWTUNVb1M4Q3FOWmc&usp=drive_web#gid=0";
+            }
                
             
         </script>
