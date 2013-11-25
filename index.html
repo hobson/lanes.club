@@ -16,6 +16,7 @@
         }
         .search_params {
              padding: 10px;
+             width: 250px;
         }
         .input_fields {
             padding: 0px 0px 10px;
@@ -113,10 +114,18 @@
                     </div>
                     <div class="search_params">
                         <div class="input_fields">
-                            <p>asking price</p> <input class="" type="tel" placeholder="asking price" ng-model="asking_price" ng-change="compute_mortgage()">
+                            <p>asking price:</p>
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input class="form-control" type="tel" placeholder="asking price" ng-model="asking_price" ng-change="compute_mortgage()">
+                            </div>
                         </div>
                         <div class="input_fields">
-                            <p>taxes</p> <input class="" type="tel" placeholder="taxes" ng-model="taxes" ng-change="compute_mortgage()">
+                            <p>taxes:</p>
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input class="form-control" type="tel" placeholder="taxes" ng-model="taxes" ng-change="compute_mortgage()">
+                            </div>
                         </div>
                         <div class="btn-group">
                             <button type="button" class="btn btn-default {{get_loan_class(30)}}" ng-click="set_loan_term(30)">30 year</button>
