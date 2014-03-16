@@ -1,32 +1,119 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <meta name="description" content="Lesia Melnyk">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-touch-fullscreen" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Lesia Melnyk</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Alexandra (Lesia) Melnyk">
+    <meta name="author" content="Aleck Konstantine Landgraf">
+
+    <title>Lesia</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
     <style>
-      html, body {
-       height:100%;
-       padding: 0px;
-       margin: 0px;
+      body {
+        min-height: 2000px;
+        padding-top: 70px;
+      }
+      #timeline {
+        padding-top: 30px;
+        height: 800px;
+        width: 100%;
+      }
+      #photos {
+        padding-top: 40px;
+        padding-left: 50px;
+        height: 500px;
+      }
+      #stories {
+        height: 500px;
+        padding-top: 30px;
+      }
+      #overview {
+        padding-top: 30px;
+        height: 100px;
+        float: none;
       }
     </style>
-    <!-- HTML5 shim, for IE6-8 support of HTML elements--><!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
-  <body>
-    <div id="timeline-embed"></div>
-      <script type="text/javascript">
-        var timeline_config = {
-         width: "100%",
-         height: "100%",
-         source: 'https://docs.google.com/spreadsheet/pub?key=0Aig3zV_5ryjndFVDaVB3MjYwMkctNDByWFYxenlYZHc&output=html'
-        }
-      </script>
-      <script type="text/javascript" src="storyjs-embed.js"></script>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="30">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#overview" data-scroll="true">Alexandra Melnyk</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#timeline" data-scroll="true">Timeline</a></li>
+            <li><a href="#photos" data-scroll="true">Photos</a></li>
+            <li><a href="#stories" data-scroll="true">Stories</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div id="overview"></div>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Alexandra Melynk</h1>
+        <p>An early birthday present to my babtsya, with the help of my dear family, a timeline of Lesia's life, photos, and stories.</p>
+        <p>Below is a timeline which highlights important events in Lesia's life. Click the arrows or use the arrow keys to move between events.</p>
+      </div>
+    </div> <!-- /container -->
+    <div id="timeline">
+      <div id="timeline-embed"></div>
+    </div>
+    <section>
+      
+    <div class="container" id="photos">
+      <iframe align="center" src="http://www.flickr.com/slideShow/index.gne?group_id=&user_id=80189961@N00&set_id=72157642449144114&text=" frameBorder="0" width="500px" height="500px" scrolling="no"></iframe>
+    </div>
+    </section>
+    <section>
+      
+    <div class="container" id="stories">
+      <h3>Stories</h3>
+      <ul>
+        <li><a href="https://s3.amazonaws.com/alexandramelnyk/UkrMelnyk_A_Woman_for_Her_Times-02.pdf" target="_blank">A Woman For Her Times</a></li>
+      </ul>
+    </div>
+    </section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript">
+      var timeline_config = {
+       width: "100%",
+       height: "100%",
+       source: 'https://docs.google.com/spreadsheet/pub?key=0Aig3zV_5ryjndFVDaVB3MjYwMkctNDByWFYxenlYZHc&output=html'
+      }
+    </script>
+    <script>
+      $('a').click(function(){
+      $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+        }, 500);
+        return false;
+      });
+    </script>
+    <script type="text/javascript" src="storyjs-embed.js"></script>
   </body>
 </html>
