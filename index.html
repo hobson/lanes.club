@@ -1,209 +1,55 @@
+
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Alexandra (Lesia) Melnyk">
+    <meta name="author" content="Aleck Konstantine Landgraf">
+
+    <title>Alexandra (Lesia) Melnyk</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
     <style>
-        body {
-          padding-top: 50px;
-        }
-        .starter-template {
-          padding: 40px 15px;
-          /*text-align: center;*/
-        }
-        .search_params {
-             padding: 10px;
-             width: 250px;
-        }
-        .input_fields {
-            padding: 0px 0px 10px;
-        }
-        .slider_class {
-            padding-left: 16px;
-            padding-top: 10px;
-        }
-        .some_padding {
-            padding-top: 15px;
-        }
-        ::-moz-focus-inner {
-          outline:0;
-        }
-
-        :focus {
-          outline:0;
-        }
-        .range-input,
-        .topcoat-range-input,
-        .topcoat-range-input--vertical {
-          padding: 0;
-          margin: 0;
-          background: transparent;
-          border: none;
-          box-sizing: border-box;
-          background-clip: padding-box;
-          vertical-align: top;
-          outline: none;
-          -webkit-appearance: none;
-        }
-
-        /* 
-          Declarations get duplicated because an invalid selector
-          invalidates the entire declaration block
-        */
-
-        .range-input::-webkit-slider-thumb,
-        .topcoat-range-input::-webkit-slider-thumb,
-        .topcoat-range-input--vertical::-webkit-slider-thumb {
-          cursor: pointer;
-          -webkit-appearance: none;
-        }
-
-        .range-input::-moz-range-thumb,
-        .topcoat-range-input::-moz-range-thumb,
-        .topcoat-range-input--vertical::-moz-range-thumb {
-          cursor: pointer;
-        }
-
-        .topcoat-range-input,
-        .topcoat-range-input--vertical {
-          border-radius: 6px;
-          border: 1px solid #a5a8a8;
-          background: #d3d7d7;
-          height: 1rem;
-          border-radius: 30px;
-        }
-
-        .topcoat-range-input::-moz-range-track,
-        .topcoat-range-input--vertical::-moz-range-track {
-          border-radius: 6px;
-          border: 1px solid #a5a8a8;
-          background: #d3d7d7;
-          height: 1rem;
-          border-radius: 30px;
-        }
-
-        /* 
-          Declarations get duplicated because an invalid selector
-          invalidates the entire declaration block
-        */
-
-        .topcoat-range-input::-webkit-slider-thumb,
-        .topcoat-range-input--vertical::-webkit-slider-thumb {
-          height: 3rem;
-          width: 2rem;
-          border: 1px solid rgba(0,0,0,0.36);
-          border-radius: 6px;
-          /* Is base64 the way to go ? */
-          /* I don't imagine simulating vertical stripes w/ gradients */ background:url("http://db.tt/q5LHtPKx") center center no-repeat #e5e9e8;
-          background-size: 7px 18px;
-          box-shadow: inset 0 1px white;
-        }
-
-        .topcoat-range-input::-moz-range-thumb,
-        .topcoat-range-input--vertical::-moz-range-thumb {
-          height: 3rem;
-          width: 2rem;
-          border: 1px solid rgba(0,0,0,0.36);
-          border-radius: 6px; background:url("http://db.tt/q5LHtPKx") center center no-repeat #e5e9e8;
-          background-size: 7px 18px;
-          box-shadow: inset 0 1px white;
-        }
-
-        .topcoat-range-input--vertical {
-          -webkit-transform:rotate(90deg);
-          -moz-transform:rotate(90deg);
-          -ms-transform:rotate(90deg);  
-          transform:rotate(90deg);  
-        }
-
-        /*
-          Active state
-        */
-
-        .topcoat-range-input:active::-webkit-slider-thumb,
-        .topcoat-range-input--vertical:active::-webkit-slider-thumb {
-          border: 1px solid #0940fd;
-          box-shadow: 0 0 0 2px #6fb5f1;
-        }
-
-        input[type=range]:active::-moz-range-thumb {
-          border: 1px solid #0940fd;
-          box-shadow: 0 0 0 2px #6fb5f1;
-        }
-
-
+      body {
+        min-height: 2000px;
+        padding-top: 70px;
+      }
+      #timeline {
+        padding-top: 30px;
+        height: 800px;
+        width: 100%;
+      }
+      #photos {
+        padding-top: 40px;
+        padding-left: 50px;
+        height: 500px;
+      }
+      #stories {
+        height: 500px;
+        padding-top: 30px;
+      }
+      #overview {
+        padding-top: 30px;
+        height: 100px;
+        float: none;
+      }
     </style>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.2/css/font-awesome.css" rel="stylesheet" type="text/css">
 
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-       
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular-touch.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-        <script>
-            var app = angular.module('theApp', ['ngTouch']);
-            app.controller('closing_cost_controller', function($scope, $window, $location) {
-                $scope.site = "https://docs.google.com/a/buildingenergy.com/spreadsheet/ccc?key=0AqJODdtaNNwedHJPWmFEaG9hdTRWTUNVb1M4Q3FOWmc&usp=drive_web#gid=0";
-                $scope.asking_price = 375000;
-                $scope.loan_to_ratio = 80;
-                $scope.taxes = 3500;
-                $scope.interest_rate = 4.125;
-                $scope.homeowner_insurance = 600;
-                $scope.term_of_loan_years = 30;
-                $scope.loan_payment = 0;
-                $scope.edit_rate = false;
-                var monthly_payment = function () {
-                    // M = P * ( J / (1 - (1 + J)^ -N))
-                    // M: monthly payment
-                    // P: principal or amount of loan
-                    // J: monthly interest; annual interest divided by 100, then divided by 12
-                    // N: number of months of amortization, determined by length in years of loan.
-                    var M, P, J, N;
-                    P = $scope.loan_payment;
-                    J = $scope.interest_rate / 100.0 / 12.0;
-                    N = $scope.term_of_loan_years * 12;
-                    M = P * ( J / (1 - Math.pow(1/(1 + J), N)));
-                    return M;
-                };
-                $scope.compute_mortgage = function (){
-                    $scope.down_payment = (1 - $scope.loan_to_ratio / 100) * $scope.asking_price;
-                    $scope.loan_payment = $scope.loan_to_ratio / 100 * $scope.asking_price;
-                    $scope.principal_payment = monthly_payment();
-                    $scope.total_payment = $scope.principal_payment + $scope.taxes / 12 + $scope.homeowner_insurance / 12;
+  <body data-spy="scroll" data-target=".navbar" data-offset="30">
 
-                };
-                $scope.set_loan_term = function(term) {
-                    $scope.term_of_loan_years = term;
-                    if (term === 15) {
-                        $scope.interest_rate = 3.250;
-                    } else {
-                        $scope.interest_rate = 4.125;
-                    }
-                    $scope.compute_mortgage();
-                };
-                $scope.get_loan_class = function(term) {
-                    if (term === $scope.term_of_loan_years) {
-                        return "active"
-                    }
-                };
-                function init(){   
-                    $scope.compute_mortgage();
-                }
-                init();
-            });
-               
-            
-        </script>
-    </head>
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -212,102 +58,61 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><i class="fa fa-home"></i>&nbsp;Closing Cost</a>
+          <a class="navbar-brand" href="#overview" data-scroll="true">Alexandra Melnyk</a>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="https://trello.com/b/uPdaOzac/our-new-house" target="_blank">Trello Board</a></li>
-            <li><a href="https://docs.google.com/a/buildingenergy.com/spreadsheet/ccc?key=0AqJODdtaNNwedHJPWmFEaG9hdTRWTUNVb1M4Q3FOWmc&usp=drive_web#gid=0" target="_blank">Google Doc from Aaron</a></li>
+            <li><a href="#timeline" data-scroll="true">Timeline</a></li>
+            <li><a href="#photos" data-scroll="true">Photos</a></li>
+            <li><a href="#stories" data-scroll="true">Stories</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
-        <div class="container" ng-app="theApp" ng-controller="closing_cost_controller">
-            <div class="starter-template">
-                <div class="content" ng-app>
-                    <h2><i class="fa fa-home"></i> Closing Cost</h2>
-                    <div class="info">
-                    </div>
-                    <div class="search_params">
-                        <div class="input_fields">
-                            <p>asking price:</p>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-usd"></i></span>
-                                <input class="form-control" type="tel" placeholder="asking price" ng-model="asking_price" ng-change="compute_mortgage()">
-                            </div>
-                        </div>
-                        <div class="slider_class">
-                            <input type="range" ng-model="asking_price" min="250000" max="650000" step="10000" style="width: 200px" class="ng-valid ng-dirty topcoat-range-input" ng-change="compute_mortgage()">
-                        </div>
-                        <div class="input_fields">
-                            <p>taxes:</p>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-usd"></i></span>
-                                <input class="form-control" type="tel" placeholder="taxes" ng-model="taxes" ng-change="compute_mortgage()">
-                            </div>
-                        </div>
-                        <div class="slider_class">
-                            <input type="range" ng-model="taxes" min="1000" max="7000" step="100" style="width: 200px" class="ng-valid ng-dirty topcoat-range-input" ng-change="compute_mortgage()">
-                        </div>
-                        <div class="btn-group some_padding">
-                            <button type="button" class="btn btn-default {{get_loan_class(30)}}" ng-click="set_loan_term(30)">30 year</button>
-                            <button type="button" class="btn btn-default {{get_loan_class(15)}}" ng-click="set_loan_term(15)">15 year</button>
-                        </div>
-                    </div>
-                    <div>
-                        <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Field</th>
-                                <th>Value</th>
-                            </tr>
-                        </thead>
+    <div id="overview"></div>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Alexandra Melynk</h1>
+        <p>An early birthday present to my babtsya, with the help of my dear family, a timeline of Lesia's life, photos, and stories.</p>
+      </div>
+    </div> <!-- /container -->
+    <div id="timeline">
+      <div id="timeline-embed"></div>
+    </div>
+    <section>
+      
+    <div class="container" id="photos">
+      <iframe align="center" src="http://www.flickr.com/slideShow/index.gne?group_id=&user_id=80189961@N00&set_id=72157642449144114&text=" frameBorder="0" width="500px" height="500px" scrolling="no"></iframe>
+    </div>
+    </section>
+    <section>
+      
+    <div class="container" id="stories">
+      <h3>Stories</h3>
+      <ul>
+        <li><a href="https://s3.amazonaws.com/alexandramelnyk/UkrMelnyk_A_Woman_for_Her_Times-02.pdf">A Woman For Her Times</a></li>
+      </ul>
+    </div>
+    </section>
 
-                        <tbody>
-                            <tr >
-                                <td>asking price</td>
-                                <td>${{asking_price | number:0}}</td>
-                            </tr>
-                            <tr >
-                                <td>taxes</td>
-                                <td>${{taxes | number:0}}</td>
-                            </tr>
-                            <tr >
-                                <td>Loan to Value Ratio</td>
-                                <td>{{ loan_to_ratio }}%</td>
-                            </tr>
-                            <tr >
-                                <td>Down Payment</td>
-                                <td>${{ down_payment | number:0 }}</td>
-                            </tr>
-                            <tr >
-                                <td>Loan Amount</td>
-                                <td>${{ loan_payment | number:0 }}</td>
-                            </tr>
-                            <tr >
-                                <td>Interest Rate</td>
-                                <td ng-show="!edit_rate">{{ interest_rate | number:3 }}% <a ng-click="edit_rate = true"><i class="fa fa-cog"></i></a></td>
-                                <td ng-show="edit_rate"><input type="tel" ng-model="interest_rate" style="width: 100px" class="ng-valid ng-dirty" ng-change="compute_mortgage()">
-                                    <button type="button" class="btn btn-default" ng-click="edit_rate = false">Close</button>
-                                </td>
-                            </tr>
-                            <tr >
-                                <td>Yearly Homeowners Insurance</td>
-                                <td>${{ homeowner_insurance | number:0 }}</td>
-                            </tr>
-                            <tr >
-                                <td>Principal Interest Payment</td>
-                                <td>${{ principal_payment | number:0 }}</td>
-                            </tr>
-                            <tr class="success">
-                                <td><strong>Total Payment (Incl Tax/Ins)</strong></td>
-                                <td><strong>${{ total_payment | number:0 }}</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </div> <!-- ng-controller -->
-                </div> <!-- content -->
-            </div>
-        </div>
-    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript">
+      var timeline_config = {
+       width: "100%",
+       height: "100%",
+       source: 'https://docs.google.com/spreadsheet/pub?key=0Aig3zV_5ryjndFVDaVB3MjYwMkctNDByWFYxenlYZHc&output=html'
+      }
+    </script>
+    <script>
+      $('a').click(function(){
+      $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+        }, 500);
+        return false;
+      });
+    </script>
+    <script type="text/javascript" src="storyjs-embed.js"></script>
+  </body>
 </html>
