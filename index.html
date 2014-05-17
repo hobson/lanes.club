@@ -14,6 +14,22 @@
         <meta name="description" content="dewey" />
         <meta name="keywords" content="dewey" />
         <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.dropotron.min.js"></script>
+        <script src="js/skel.min.js"></script>
+        <script src="js/skel-layers.min.js"></script>
+        <script src="js/init.js"></script>
+        <noscript>
+            <link rel="stylesheet" href="css/skel.css" />
+            <link rel="stylesheet" href="css/style.css" />
+            <link rel="stylesheet" href="css/style-noscript.css" />
+        </noscript>
+        <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+        <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+    </head>
+    <body class="index loading">
+        
         <SCRIPT>
             function passWord() {
                 var testV = 1;
@@ -40,165 +56,5 @@
         <input type="button" value="Enter" onClick="passWord()">
         </FORM>
         </CENTER>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery.dropotron.min.js"></script>
-        <script src="js/skel.min.js"></script>
-        <script src="js/skel-layers.min.js"></script>
-        <script src="js/init.js"></script>
-        <noscript>
-            <link rel="stylesheet" href="css/skel.css" />
-            <link rel="stylesheet" href="css/style.css" />
-            <link rel="stylesheet" href="css/style-noscript.css" />
-        </noscript>
-        <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-        <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
-    </head>
-    <body class="index loading">
-    
-        <!-- Header -->
-            <header id="header" class="alt">
-                <h1 id="logo"><a href="#">Dewey <span>by the Lanes</span></a></h1>
-                <nav id="nav">
-                    <ul>
-                        <li class="current"><a href="#banner" class="scrolly">Welcome</a></li>
-                        <li class="submenu">
-                            <a href="">Life</a>
-                            <ul>
-                                <li><a href="#main" class="scrolly">timeline</a></li>
-                                <li><a href="#pictures" class="scrolly">pictures</a></li>
-                                <li><a href="#stories" class="scrolly">stories</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#cta" class="button special scrolly">80th birthday</a></li>
-                    </ul>
-                </nav>
-            </header>
-
-        <!-- Banner -->     
-            <section id="banner">
-                
-                <!--
-                    ".inner" is set up as an inline-block so it automatically expands
-                    in both directions to fit whatever's inside it. This means it won't
-                    automatically wrap lines, so be sure to use line breaks where
-                    appropriate (<br />).
-                -->
-                <div class="inner">
-                    
-                    <header>
-                        <h2>Dewey Lane</h2>
-                    </header>
-                    <p>Celebrating 8 decades of <strong>giving</strong> and learning.<br />
-                    </p>
-
-                    <footer>
-                        <ul class="buttons vertical">
-                            <li><a href="#main" class="button fit scrolly">Continue</a></li>
-                        </ul>
-                    </footer>
-                
-                </div>
-                
-            </section>
-        
-        <!-- Main -->
-            <article id="main">
-
-                <header class="special container">
-                    <span class="icon fa-group"></span>
-                    <h2>Here are some of Dewey's memorable moments<br /></h2>
-                </header>
-                    
-                <!-- One -->
-                    <section class="wrapper style2 container special-alt">
-                        <div id="timeline">
-                          <div id="timeline-embed"></div>
-                        </div>
-                    </section>
-                    
-                <!-- Two -->
-                    <section class="wrapper style2 container special" id="pictures">
-                        <section>
-                            <header>
-                                <h3>Pictures</h3>
-                            </header>
-                            <iframe src="https://www.flickr.com/photos/hobsonlane/player/" width="100%" height="446" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
-                            <p>See all the photos on flickr <a href="https://www.flickr.com/photos/hobsonlane/sets/123456789" target="_blank"><strong>here</strong></a></p>
-                        </section>
-                    </section>
-                    
-                <!-- Three -->
-                    <section class="wrapper style3 container special" id="stories">
-                    
-                        <header class="major">
-                            <h2>Stories</h2>
-                        </header>
-                        
-                        <div class="row">
-                            <ul>
-                              <li><a href="https://s3.amazonaws.com/deweylane/dewey_the_healer.pdf" target="_blank">A Healer for All</a></li>
-                            </ul>
-                        </div>
-
-                    </section>
-                    
-            </article>
-
-        <!-- CTA -->
-            <section id="cta">
-            
-                <header>
-                    <h2>80th Birthday Party</h2>
-                    <p>A roast will be held at <strong><a href="http://cmranch.com" target="_blank">CM Ranch</a></strong><br />
-                    in June<br />
-                    Dubois, Wyoming<br />
-                    <a href="https://www.google.com/maps/place/CM+Ranch/@43.492887,-109.600388,17z/data=!3m1!4b1!4m2!3m1!1s0x0:0x869bdaac6f3f80ef" class="icon fa-map-marker" target="_blank"> map</a>
-                    </p>
-                    <h3>Gifts</h3>
-                    <p> I'm sure Dad would rather you send donations to your favorite charity rather than giviing him gifts that he has to write thank-you notes for ;)</p>
-                    <h3>Memories</h3>
-                    <p>Send your favorite memory or photo to <strong><a href="mailto:hobson.lane@gmail.com">hobson.lane@gmail.com</a></strong></p>
-                </header>
-                <footer>
-                    <ul class="buttons">
-                        <li><a href="mailto:hobson.lane@gmail.com" class="button">Email me</a></li>
-                    </ul>
-                </footer>
-                    <div id="disqus_thread"></div>
-                    <script type="text/javascript">
-                        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-                        var disqus_shortname = 'dewey'; // required: replace example with your forum shortname
-                        var disqus_url = 'http://hobson.github.io/lanes.club/dewey.html';
-
-                        /* * * DON'T EDIT BELOW THIS LINE * * */
-                        (function() {
-                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                        })();
-                    </script>
-                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-                    
-            
-            </section>
-
-        <!-- Footer -->
-            <footer id="footer">
-            
-                <span class="copyright">Design provided freely by: <a href="http://html5up.net">HTML5 UP</a>.<br />
-                Graciously hosted by <a href="https://github.com/alecklandgraf/alecklandgraf.github.com" class="fa fa-github solo"></a> PRs welcome</span>
-            
-            </footer>
-        <!-- timeline JS configuration -->
-        <script type="text/javascript">
-            var timeline_config = {
-                width: "100%",
-                height: "100%",
-                start_zoom_adjust: 2,
-                source: 'https://docs.google.com/spreadsheet/pub?key=0Aig3zV_5ryjndFVDaVB3MjYwMkctNDByWFYxenlYZHc&output=html'
-            };
-        </script>
-        <script type="text/javascript" src="storyjs-embed.js"></script>
     </body>
 </html>
