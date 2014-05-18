@@ -2,8 +2,8 @@
 
 function validate(form)
 {
-  console.log('password validate')
-  if(form.password.value == "password")
+  console.log(Sha256.hash(form.password.value))
+  if(Sha256.hash(form.password.value) == 'password')
   {
     console.log('validated!!!')
      var date = new Date();
