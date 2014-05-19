@@ -10,7 +10,7 @@ function validate(form)
      date.setTime(date.getTime() + (2 * 365 * 24 * 3600 * 1000));
      var expires = "; expires=" + date.toGMTString();
      document.cookie = "access=true" + expires + "; path=/";
-     document.location =  "indexnew.html";
+     document.location =  "index.html";
   }
   else
   {
@@ -33,7 +33,7 @@ function getEnter(e)
           date.setTime(date.getTime() + (86400000));
           var expires = "; expires=" + date.toGMTString();
           document.cookie = "access=true" + expires + "; path=/";
-          document.location =  "indexnew.html";
+          document.location =  "index.html";
 
            return false;
       }

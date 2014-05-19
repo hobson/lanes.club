@@ -1,59 +1,17 @@
-<!DOCTYPE HTML>
-<!--
-    Twenty 1.0 by HTML5 UP
-    html5up.net | @n33co
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-
-    Hosted for fee by GitHub, and is an Open Source repo:
-    https://github.com/alecklandgraf/alecklandgraf.github.com/blob/master/dewey.html
--->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
-    <head>
-        <title>Dewey</title>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="description" content="dewey" />
-        <meta name="keywords" content="dewey" />
-        <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<script type="text/javascript" src="js/Sha256.js"></script>
+<script type="text/javascript" src="//hobson.github.io/lanes.club/access.js"></script>
+</head>
+<body>
 
-        <script type="text/javascript" src="access.js"></script>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/Sha256.js"></script>
-        <noscript>
-            <link rel="stylesheet" href="css/skel.css" />
-            <link rel="stylesheet" href="css/style.css" />
-            <link rel="stylesheet" href="css/style-noscript.css" />
-        </noscript>
-        <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-        <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
-    </head>
-    <body class="index loading">
-        
-        <SCRIPT>
-            function passWord() {
-                var testV = 1;
-                var pass1 = prompt("What is Dewey's favorite desert (three words, all lowercase, no spaces)?",' ');
-                while (testV < 3) {
-                    if (!pass1) 
-                        history.go(-1);
-                    if (Sha256.hash(pass1) == 
-                        "9c9e85162ea714280c952ab799ccf6a15921309d8c6520293de24d7703d83668"
-                        )) {
-                        window.open('protectedpage.html');
-                        break;
-                        } 
-                    testV+=1;
-                    var pass1 = 
-                        prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
-                    }
-                if (pass1.toLowerCase()!="keylimepie" & testV ==3) 
-                    history.go(-1);
-                return " ";
-                } 
-        </SCRIPT>
-        <CENTER>
-        <FORM>
-        <input type="button" value="Enter" onClick="passWord()">
-        </FORM>
-        </CENTER>
-    </body>
+This is index.html<br />
+
+<a href="page1.html">Page 1</a><br />
+
+<!-- <a href="#" onclick="deleteCookie()">Log Out</a> -->
+
+</body>
 </html>
