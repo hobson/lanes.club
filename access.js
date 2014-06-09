@@ -27,3 +27,8 @@ function deleteCookie()
    document.cookie = "access=false;expires="  + d.toGMTString() + "; path=/";
    document.location = "login.htm";
 }
+
+function validate(obj)
+{
+    console.log(obj);
+}
