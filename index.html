@@ -5,7 +5,10 @@
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
     Open Source:
-    https://github.com/hobson/lanes.club
+    http://github.com/hobson/lanes.club/
+
+    Working Example:
+    http://lanes.club/
 -->
 <html>
     <head>
@@ -14,10 +17,7 @@
         <meta name="description" content="dewey" />
         <meta name="keywords" content="dewey" />
         <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-
-        <script type="text/javascript" src="js/Sha256.js"></script>
-        <script type="text/javascript" src="js/access.js"></script>
-
+        <script type="text/javascript" src="//access.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.dropotron.min.js"></script>
         <script src="js/skel.min.js"></script>
@@ -34,7 +34,11 @@
 
 
     <body class="index loading">
-    
+        <CENTER>
+        <FORM>
+        <input type="button" value="Enter" onClick="passWord()">
+        </FORM>
+        </CENTER>
         <!-- Header -->
             <header id="header" class="alt">
               <h1 id="logo"><a href="#">Dewey</a></h1><span>by the Lanes</span>
@@ -102,8 +106,8 @@
                             <header>
                                 <h3>Pictures</h3>
                             </header>
-                            <iframe src="/images/1939 hattiesburg dewey wesley liz granny dewey scaled.jpg" width="100%" height="446" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
-                            <p>See all the photos on flickr <a href="/images/1939 hattiesburg dewey wesley liz granny dewey scaled.jpg" target="_blank"><strong>here</strong></a></p>
+                            <iframe src="https://www.flickr.com/photos/hobsonlane/player/" width="100%" height="446" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+                            <p>See all the photos on flickr <a href="https://www.flickr.com/photos/hobsonlane/sets/123456789" target="_blank"><strong>here</strong></a></p>
                         </section>
                     </section>
                     
@@ -116,7 +120,7 @@
                         
                         <div class="row">
                             <ul>
-                              <li><a href="/images/1976 Oct dewey robin hobson birthday.jpg" target="_blank">A Healer for All</a></li>
+                              <li><a href="https://s3.amazonaws.com/deweylane/dewey_the_healer.pdf" target="_blank">A Healer for All</a></li>
                             </ul>
                         </div>
 
@@ -167,7 +171,7 @@
             <footer id="footer">
             
                 <span class="copyright">Design provided freely by: <a href="http://html5up.net">HTML5 UP</a>.<br />
-                Graciously hosted by <a href="https://github.com/alecklandgraf/alecklandgraf.github.com" class="fa fa-github solo"></a> PRs welcome</span>
+                Hosted by <a href="https://github.com/hobson" class="fa fa-github solo"></a> PRs welcome</span>
             
             </footer>
         <!-- timeline JS configuration -->
@@ -176,12 +180,10 @@
                 width: "100%",
                 height: "100%",
                 start_zoom_adjust: 2,
-                source: 'https://docs.google.com/spreadsheets/d/1_IQ2XPCFjAgBxgOka4WtXWXiAcNbW8W103mttq9md7c/'
+                // in HL's docs.google root directory
+                source: 'https://docs.google.com/spreadsheets/d/1_IQ2XPCFjAgBxgOka4WtXWXiAcNbW8W103mttq9md7c'
             };
         </script>
         <script type="text/javascript" src="storyjs-embed.js"></script>
     </body>
-</html>
-
-</body>
 </html>
