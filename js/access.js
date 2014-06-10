@@ -23,7 +23,7 @@ if(!found)
 
 function deleteCookie()
 {
-   var d = new Date(2014, 06, 22);
+   var d = new Date(2011, 06, 22);
    document.cookie = "access=false;expires="  + d.toGMTString() + "; path=/";
    document.location = "login.htm";
 }
