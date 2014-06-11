@@ -22,12 +22,12 @@ while(i <= strCookie.length)
 console.log('found = ' + found)
 if(!found)
 {
-   document.location = "lanes.club/login.html";
+   document.location = "//lanes.club/login.html";
 }
 
 function deleteCookie()
 {
    var d = new Date(2014, 06, 09);
-   document.cookie = "access=false;expires="  + d.toGMTString() + "; path=lanes.club/index.html";
-   document.location = "lanes.club/index.html";
+   document.cookie = "access=false;expires="  + d.toGMTString() + "; path=/";
+   document.location = "//lanes.club/login.html";
 }
