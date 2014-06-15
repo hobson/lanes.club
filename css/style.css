@@ -514,8 +514,8 @@
 		}
 
 			.button.special:hover {
-				background: #fadad1 !important;
-				border-color: #fadad1 !important;
+				background: #96dad1 !important;  /*fadad1*/
+				border-color: #96dad1 !important;  /*fadad1*/
 			}
 
 		.button.fit {
