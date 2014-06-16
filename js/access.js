@@ -8,11 +8,11 @@ function get_relative_url(levels_up) {
 
     var pathElements = window.location.pathname.split('/');
     var newPathname = "";
-    for (i = 0; i < pathArray.length-levels_up; i++) {
+    for (i = 0; i < pathElements.length-levels_up; i++) {
         newPathname += "/";
-        newPathname += pathArray[i];
+        newPathname += pathElements[i];
     }
-    if newPathname.length > 0) { newPathname += "/"; }
+    if (newPathname.length > 0) { newPathname += "/"; }
     var newURL = window.location.protocol + "//" + window.location.host + "/" + newPathname;
     return newURL;
     }
