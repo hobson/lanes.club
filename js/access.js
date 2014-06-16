@@ -4,7 +4,7 @@ var loc1, loc2;
 var i = 0;
 
 function get_relative_url(levels_up) {
-    if (levels_up == null) { levels_up = 2; }
+    levels_up = (typeof levels_up === "undefined") ? 2 : levels_up;
 
     var pathElements = window.location.pathname.split('/');
     var newPathname = "";
