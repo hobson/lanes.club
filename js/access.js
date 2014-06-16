@@ -19,10 +19,21 @@ while(i <= strCookie.length)
   i++;
 }
 
+var pathElements = window.location.pathname.split('/');
+var newPathname = "";
+for (i = 0; i < pathArray.length-2; i++) {
+    newPathname += "/";
+    newPathname += pathArray[i];
+}
+if newPathname.length > 0) {
+    newPathname = newPathname + '/';
+}
+var newURL = window.location.protocol + "//" + window.location.host + "/" + newPathname + 'login.html';
+
 console.log('found = ' + found)
 if(!found)
 {
-   document.location = "/login.html";
+    document.location = newURL;
 }
 
 function deleteCookie()
